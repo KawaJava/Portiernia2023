@@ -1,6 +1,5 @@
 package io.github.kawajava.portiernia2023.user.rental.model;
 
-import io.github.kawajava.portiernia2023.user.lecturer.model.Lecturer;
 import jakarta.persistence.*;
 import lombok.*;
 
