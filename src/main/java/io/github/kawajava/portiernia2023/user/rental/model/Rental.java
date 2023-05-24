@@ -1,10 +1,12 @@
 package io.github.kawajava.portiernia2023.user.rental.model;
 
+import io.github.kawajava.portiernia2023.user.lecturer.model.Lecturer;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -23,5 +25,16 @@ public class Rental {
     private int notification;
     private int lecturerId;
     private int lectureHallId;
+
+    @Override
+    public boolean equals(Object object) {
+        Rental rental  = (Rental) object;
+        return this.releaseTime == rental.releaseTime && this.lecturerId == rental.lecturerId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(releaseTime, lecturerId);
+    }
 
 }
