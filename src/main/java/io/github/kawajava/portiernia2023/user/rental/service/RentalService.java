@@ -35,13 +35,13 @@ public class RentalService {
 
     public List<Rental> getRentalsWithoutReturns() {
         return rentalRepository.findAll().stream()
-                .filter(Rental -> Rental.getReturnTime().toString().isEmpty())
+                .filter(Rental -> Rental.getReturnTime() == null)
                 .collect(Collectors.toList());
     }
 
     public List<Rental> getRentalsAfterDeadline() {
         return rentalRepository.findAll().stream()
-                //.filter(Rental -> Rental.getReturnTime().equals(null))
+                .filter(Rental -> Rental.getReturnTime() == null)
                 .filter(Rental -> Rental.getDeadlineTime().isBefore(LocalTime.now()))
                 .collect(Collectors.toList());
     }
