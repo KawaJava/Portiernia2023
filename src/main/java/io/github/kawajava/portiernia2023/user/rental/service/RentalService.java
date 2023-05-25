@@ -45,4 +45,12 @@ public class RentalService {
                 .filter(Rental -> Rental.getDeadlineTime().isBefore(LocalTime.now()))
                 .collect(Collectors.toList());
     }
+
+    public List<Rental> getRentalsToSendEmail() {
+        return rentalRepository.findAll().stream()
+                .filter(Rental -> Rental.getReturnTime() == null)
+                .filter(Rental -> Rental.getNotification() == 0)
+                .filter(Rental -> Rental.getDeadlineTime().isBefore(LocalTime.now()))
+                .collect(Collectors.toList());
+    }
 }

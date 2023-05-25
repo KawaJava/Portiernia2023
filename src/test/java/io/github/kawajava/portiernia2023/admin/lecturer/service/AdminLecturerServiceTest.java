@@ -41,8 +41,7 @@ class AdminLecturerServiceTest {
     @Test
     void shouldGetActiveLecturers() {
         // when
-        List<AdminLecturer> lecturers =
-                adminLecturerService.getActiveLecturers();
+        List<AdminLecturer> lecturers = adminLecturerService.getActiveLecturers();
         // then
         assertThat(lecturers).hasSize(1);
     }
