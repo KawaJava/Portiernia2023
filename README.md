@@ -11,5 +11,6 @@ zmniejszyć ilość kodu. Ograniczyłem także ilość tabeli, stosując m.in en
  3. Po zainstalowaniu należy otworzyć aplikację w IDE i w application.properties dodać nazwę użytkownika i hasło do MySQL.
  4. Aby automatyczne wysyłanie maili zostało włączone, należy podać w application.properties login i hasłoDoAplikacji - żeby je wygenerować trzeba mieć włączoną weryfikację dwuetapową w google. Należy także odkomentować kod w plikach EmailSender.java oraz EmailSenderService.java.
  5. Uruchomić aplikację.
- 6. Można używać aplikacji POSTMAN do edytowania rekordów w bazie danych.
+ 6. Zalogować się za pomocą loginu admin lub user oraz wprowadzić hasło: 1234.
+ 7. Można używać aplikacji POSTMAN do edytowania rekordów w bazie danych.
 
